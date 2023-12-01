@@ -8,6 +8,7 @@
   - `npm run test-expenditure-analysis`
 */
 
+//code is quiet too messy, ill try to fix it later ;)
 function calculateTotalSpentByCategory(transactions) {
   let newData=[]
   for(let i=0;i<transactions.length;i++){
