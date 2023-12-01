@@ -9,7 +9,31 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
-}
+  let newData=[{}]
+  for(let i=0;i<transactions.length;i++){
+    var sum=transactions.reduce((cost,element)=>{
+      if(element.category==transactions[i].category){
+        console.log(cost)
+         return cost+element.price
+      }
+      
+    })
 
+    // console.log(transactions[i].category,"\t",sum)
+  }
+  return true;
+}
+param=[
+ { itemName:'Phutane', category:'Snack', price:20, timestamp:'30-11-2023 9:00AM'},
+ {itemName:'Watane', category:'Snack', price:25, timestamp:'3-11-2023 9:00AM'},
+ {itemName:'Happy Happy biscute', category:'Snack', price:5, timestamp:'6-11-2023 9:00AM'},
+ {itemName:'Gajar', category:'Helthy food', price:30, timestamp:'17-11-2023 9:00AM'},
+ {itemName:'Apple', category:'Helthy food', price:60, timestamp:'19-11-2023 9:00AM'},
+ {itemName:'Coca-cola', category:'Beverage', price:37, timestamp:'29-11-2023 9:00AM'},
+ {itemName:'Potato chips', category:'Snack', price:20, timestamp:'9-11-2023 9:00AM'},
+ {itemName:'Gulkand Lassi', category:'Beverage', price:25, timestamp:'19-11-2023 9:00AM'},
+ {itemName:'Pespsi', category:'Beverage', price:40, timestamp:'30-11-2023 9:00AM'},
+ {itemName:'Gulab Jamun', category:'Dessert', price:22, timestamp:'17-11-2023 9:00AM'}
+]
+console.log(calculateTotalSpentByCategory(param))
 module.exports = calculateTotalSpentByCategory;
