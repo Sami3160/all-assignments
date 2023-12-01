@@ -13,15 +13,16 @@ function calculateTotalSpentByCategory(transactions) {
   for(let i=0;i<transactions.length;i++){
     var sum=transactions.reduce((cost,element)=>{
       if(element.category==transactions[i].category){
-        
-        console.log(typeof(element.price+cost))
+        // console.log(typeof(element.price+cost))
         return cost+element.price
       }
       return cost;
     },0);
-    
-    
+    if(newData.indexOf({catagory:transactions[i].category ,total: sum})==-1){
+      newData[i]={catagory:transactions[i].category ,total: sum}
+    }
   }
+  return newData;
 }
 param=[
  { itemName:'Phutane', category:'Snack', price:20, timestamp:'30-11-2023 9:00AM'},
