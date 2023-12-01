@@ -39,3 +39,20 @@ param=[
 ]
 console.log(calculateTotalSpentByCategory(param))
 module.exports = calculateTotalSpentByCategory;
+
+
+//new logic :
+/*
+function calculateTotalSpentByCategory(transactions) {
+    let newData=[]
+    for(var i=0;i<transactions.length;i++){
+        const existingIndex = newData.findIndex(item => item && item.category === transactions[i].category);
+        if(existingIndex==-1){
+            newData[i]={category:transactions[i].category,price:transactions[i].price}
+        }else{
+            newData[existingIndex].price+=transactions[i].price
+        }
+    }
+    return newData;
+  }
+*/
